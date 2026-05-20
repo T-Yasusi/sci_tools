@@ -1,5 +1,5 @@
 const list = [
-    { name: '演算子テスト', value: "op_test" }
+    { name: 'テスト', value: "test" }
 ];
 
 export default ()=>{
@@ -9,6 +9,6 @@ export default ()=>{
 	option.innerHTML = item.name;
 	option.value = item.value;
 	select.appendChild(option);
-	console.log(item);
+//	console.log(item);
     }
 }
