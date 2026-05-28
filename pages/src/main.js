@@ -8,12 +8,13 @@ import consoleOutput from './consoleLogHack.js'
 window.consoleOutput = consoleOutput; // Globalに定義することで動的ロードされたコードからも使用可能になる
 
 const editor = createMonacoEditor(document.getElementById('editor'));
-editor.setValue('console.log("START"); \n console.log("Hello World!!"); \n console.log("FINISH");');
+editor.setValue('console.log("START"); \nconsole.log("Hello World!!"); \nconsole.log("FINISH");');
 
 const codeTemplates = document.getElementById('code-template');
 codeTemplates.addEventListener('change', async (event)=>{
     const filename = event.target.value
-    const code = await fetch(`./test/${filename}.ts`).then(res=> res.text());
+    console.log(filename);
+    const code = await fetch(`./${filename}`).then(res=> res.text());
     editor.setValue(code);
 });
 codeTemplates.dispatchEvent(new Event('change'));
