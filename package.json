@@ -1,4 +1,11 @@
 {
   "name": "sci_tools",
-  "packageManager": "yarn@4.9.1"
+  "type": "module",
+  "packageManager": "yarn@4.9.1",
+  "devDependencies": {
+    "@babel/core": "^7.29.7",
+    "@babel/plugin-syntax-typescript": "^7.29.7",
+    "fast-glob": "^3.3.3",
+    "typescript": "^6.0.3"
+  }
 }
