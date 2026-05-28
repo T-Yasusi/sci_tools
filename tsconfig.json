@@ -1,0 +1,13 @@
+{
+    "compilerOptions": {
+//    "target": "ES2020",
+    "module": "ESNext",
+    "rootDir": "modules/lib",           // ソースのルート
+    "outDir": "modules/dist",           // 出力ディレクトリ
+    "strict": true,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "skipLibCheck": true
+    },
+    "include": ["modules/lib/**/*.ts"]
+}
