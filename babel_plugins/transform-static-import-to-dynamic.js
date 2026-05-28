@@ -1,6 +1,6 @@
 export default function ({ types: t }) {
   const importDir = '../modules/';
-  const exportDir = location.origin + '/sci_tools/pages/modules/';
+  const exportDir = location.origin + '/sci_tools/modules/';
   console.log(exportDir);
 
   return {
