@@ -7,4 +7,4 @@ const z1 = new Complex(1, 1);
 const z2 = new Complex(1, 3);
 
 console.log(x1 + x2);
-console.log(z1 + z2);
+console.log((z1 + z2).toPrecision(3));
