@@ -37,16 +37,23 @@ yarn install
 ```
 
 ## 🛠️ 使い方 (Usage)
-### Webプレイグラウンド
-pagesディレクトリに移動後`yarn dev`でViteによるページを起動、その後アクセス
-
 ### ターミナル (Nodeツール)
 ```bash
+# modules/src/**.ts modules/lib/**.tsへ変換(演算子オーバーロード)
+yarn node cli_tools/AST_operator_overload.js
+
 # modules/lib/**.ts modules/lib/**.jsへ変換
 yarn tsc
+
 # test/*.ts のテストTSをtest_js/*.jsに変換、実行
 yarn cli_tools/exec_test.js test/**.ts
 ```
+
+### Webプレイグラウンド
+pagesディレクトリに移動後`yarn dev`でViteによるページを起動、その後アクセス
+
+## 💻 デモ (Demo)
+[Github page](https://t-yasusi.github.io/sci_tools/)を使ったデモも公開しています。
 
 ## 📝 ライセンス (License)
 このプロジェクトは MIT License のもとで公開されています。
