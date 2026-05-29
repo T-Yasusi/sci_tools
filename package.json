@@ -5,7 +5,11 @@
   "devDependencies": {
     "@babel/core": "^7.29.7",
     "@babel/plugin-syntax-typescript": "^7.29.7",
+    "@babel/preset-typescript": "^7.29.7",
     "fast-glob": "^3.3.3",
     "typescript": "^6.0.3"
+  },
+  "scripts": {
+    "build": "yarn node cli_tools/AST_operator_overload.js && yarn tsc"
   }
 }
