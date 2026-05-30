@@ -3,10 +3,6 @@ import fs from 'fs';
 import path from 'path';
 import glob from 'fast-glob';
 
-import { transformSync } from '@babel/core';
-import syntaxTypeScript from '@babel/plugin-syntax-typescript';
-import operatorOverloadPlugin from '../babel_plugins/operator_overload.js';
-
 const inputDir = 'modules/src/';
 const outputDir = 'modules/lib/';
 
@@ -24,6 +20,10 @@ for (const inputFile of files) {
 
     console.log(`✅ ${inputFile} → ${outputFile}`);
 }
+
+import { transformSync } from '@babel/core';
+import syntaxTypeScript from '@babel/plugin-syntax-typescript';
+import operatorOverloadPlugin from '../babel_plugins/operator_overload.js';
 
 function transpile(inputCode, filename='temp.ts'){
     return transformSync(inputCode, {

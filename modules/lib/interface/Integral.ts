@@ -18,6 +18,13 @@ export interface Integral {
         N: number
     ): number | Complex;
 
+    gaussKronrod(
+        f: ((x: number)=> number) | ((z: Complex)=> Complex),
+        x0: number | Complex,
+        x1: number | Complex,
+        tol: number
+    ): number | Complex;
+    
     minusInfToInf(
         f: ((x: number)=> number) | ((z: Complex)=> Complex),
         threshold: number
