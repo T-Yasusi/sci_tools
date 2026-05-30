@@ -37,23 +37,21 @@ yarn install
 ```
 
 ## 🛠️ 使い方 (Usage)
-### ターミナル (Nodeツール)
-```bash
-# modules/src/**.ts modules/lib/**.tsへ変換(演算子オーバーロード)
-yarn node cli_tools/AST_operator_overload.js
 
-# modules/lib/**.ts modules/lib/**.jsへ変換
-yarn tsc
+### 🌐 Webプレイグラウンド
+pagesディレクトリに移動後`yarn dev`でViteによるページを起動、その後アクセス
+
+### 🖥️  ターミナル(Nodeツール)
+```bash
+# module/src/**.ts -(演算子をadd関数等へ)-> modules/lib/**.ts -(実行可能JSファイルへ)-> modules/lib/**.jsへ変換
+yarn build
 
 # test/*.ts のテストTSをtest_js/*.jsに変換、実行
 yarn cli_tools/exec_test.js test/**.ts
 ```
 
-### Webプレイグラウンド
-pagesディレクトリに移動後`yarn dev`でViteによるページを起動、その後アクセス
-
-## 💻 デモ (Demo)
-[Github page](https://t-yasusi.github.io/sci_tools/)を使ったデモも公開しています。
+- [🛠️  環境設定など]((./CONFIGURATION.md)はこちらを参照
+- [📐 計算系ツールライブラリ](./API.md)はこちらを参照
 
 ## 📝 ライセンス (License)
 このプロジェクトは MIT License のもとで公開されています。
