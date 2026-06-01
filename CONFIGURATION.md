@@ -9,7 +9,7 @@ CLI(コマンドライン)ツールを置いてあるディレクトリ
 - ** exec_test_all.js: **
   test/**.tsにあるすべてのテストファイルをトランスパイル・実行する。
 
-## 📂 babel_plugin
+## 📂 babel_plugins
 - ** operator_overload.js: **
   演算子オーバーロードをするプラグイン
 - ** transform-static-import-to-dynamic.js: **
