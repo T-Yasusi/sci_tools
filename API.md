@@ -39,6 +39,7 @@ add(加算), sub(減算), mul(乗算), div(除算), neg(負), mod(剰余) があ
 これらは以下のメソッドを持つオブジェクトとして返される。
 - trapezoid: 台数法
 - simpson: シンプソン法
+- gaussKronrod: ガウスクロンド法、第四引数は分割数ではなく誤差`tol`
 - minusInfToInf: 二重指数型積分法による[-&infin;:&infin;]の範囲での積分
 - zeroInfToInf: 二重指数型積分法による[0:&infin;]の範囲での積分
 - minusOneToOne: 二重指数型積分法による[-1:1]の範囲での積分

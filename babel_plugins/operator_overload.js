@@ -4,6 +4,7 @@ const operatorToFunction = {
   '*': 'mul',
   '/': 'div',
   '%': 'mod',
+  '+=': 'addEq',
 };
 
 const unaryOperatorToFunction = {
