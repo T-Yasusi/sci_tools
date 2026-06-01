@@ -16,10 +16,10 @@ export default function converge(g: ((x: number) => number), threshold: number):
   let range = mul(0.1, max_range);
   const step = range;
   let val0 = trapezoid(g, neg(range), range);
-  range += step;
+  range = add(range, step);
   let val1 = trapezoid(g, neg(range), range);
   while (abs(sub(val0, val1)) as number > threshold) {
-    range += step;
+    range = add(range, step);
     if (range > max_range) throw new Error('!!! integral.minusInfToInf not converged !!!');
     val0 = val1;
     val1 = trapezoid(g, neg(range), range);

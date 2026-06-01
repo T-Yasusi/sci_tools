@@ -29,8 +29,8 @@ export default function gaussKronrod(
 	kronrod_val = 0;
 	for( let i=0; i<ranges.length-1; i++ ){
 	    const [ v0, v1 ] = calc(f, ranges[i], ranges[i+1]);
-	    gauss_val = gauss_val + v0;
-	    kronrod_val = kronrod_val + v1;
+	    gauss_val += v0;
+	    kronrod_val += v1;
 	}
     }
 //    console.log('g =', gauss_val, ' k =',kronrod_val);
@@ -48,10 +48,10 @@ function calc(
     const kronrod_calc_points = kronrod_points.map(a => x0 + (a+1)*(x1-x0)/2);
     
     let gauss_val = 0;
-    for( let i=0; i<gauss_calc_points.length; i++ ) gauss_val = gauss_val + gauss_weights[i] * f(gauss_calc_points[i]);
+    for( let i=0; i<gauss_calc_points.length; i++ ) gauss_val += gauss_weights[i] * f(gauss_calc_points[i]);
   
     let kronrod_val = 0;
-    for( let i=0; i<kronrod_calc_points.length; i++ ) kronrod_val = kronrod_val + kronrod_weights[i] * f(kronrod_calc_points[i]);
+    for( let i=0; i<kronrod_calc_points.length; i++ ) kronrod_val += kronrod_weights[i] * f(kronrod_calc_points[i]);
 
     return [ (x1-x0)*gauss_val/2, (x1-x0)*kronrod_val/2 ];
 }

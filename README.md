@@ -40,6 +40,7 @@ yarn install
 
 ### 🌐 Webプレイグラウンド
 pagesディレクトリに移動後`yarn dev`でViteによるページを起動、その後アクセス
+[Github Pagesによるデモ](https://t-yasusi.github.io/sci_tools/)
 
 ### 🖥️  ターミナル(Nodeツール)
 ```bash
@@ -50,7 +51,7 @@ yarn build
 yarn cli_tools/exec_test.js test/**.ts
 ```
 
-- [🛠️  環境設定など]((./CONFIGURATION.md)はこちらを参照
+- [🛠️  環境設定など](./CONFIGURATION.md)はこちらを参照
 - [📐 計算系ツールライブラリ](./API.md)はこちらを参照
 
 ## 📝 ライセンス (License)
