@@ -1,14 +1,14 @@
 import { Complex } from '../../../Complex.js'
 import trapezoid from '../../trapezoid.js'
 import { add, sub, mul, div, neg } from '../../../operators.js';
-import { abs, isNaN } from '../../../functions.js'
+import { abs, isNaN, isFinite } from '../../../functions.js'
 
 export default function convergeComplex(
     g: ((x: Complex)=> Complex),
     threshold: number
 ): Complex {
     let max_range = 20;
-    while( isNaN(abs(g(-max_range))) || isNaN(abs(g(new Complex(max_range, 0)))) ){
+    while( isFinite(abs(g(-max_range))) || isFinite(abs(g(new Complex(max_range, 0)))) ){
         max_range = 0.5*max_range;
         if( max_range<1.0e-3 ) throw new Error('!!! integral.minusInfToInf not converged function !!!');
     }

@@ -6,11 +6,11 @@ export default function converge(
     g: ((x: number)=> number),
     threshold: number
 ): number {
-    let max_range = 1;
+    let max_range = 3;
     try{
 	while( !Number.isFinite(abs(g(-max_range))) || !Number.isFinite(abs(g(max_range))) ){
             max_range = 1.2*max_range;
-            if( max_range<1.0e-3 ) throw new Error('!!! integral.minusInfToInf not converged function !!!');
+            if( max_range<1.0e-3 ) throw new Error('!!! integral.minusOneToOne not converged function !!!');
         }
     } catch(e){ 
         max_range = max_range/1.2;
@@ -24,10 +24,10 @@ export default function converge(
     let val1 = trapezoid(g, -range, range);
     while( abs(val0-val1) as number > threshold ){
         range += step;
-        if( range>max_range ) throw new Error('!!! integral.minusInfToInf not converged !!!');
+        if( range>max_range ) throw new Error('!!! integral.minusOneToOne not converged !!!');
         val0 = val1;
         val1 = trapezoid(g, -range, range);
- //       console.log(range, val0, val1);
+//       console.log(range, val0, val1);
     }
     return val1 as number;
 }
