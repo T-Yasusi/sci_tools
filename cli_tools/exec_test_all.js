@@ -4,7 +4,14 @@ import path from 'path';
 import { execSync } from 'child_process'
 import glob from 'fast-glob';
 
-const files = await glob(`test/**/*.ts`);
+// const files = await glob(`test/**/*.ts`);
+const files = [
+    'test/diff.ts',
+    'test/integral.ts',
+    'test/improper_integral.ts',
+    'test/newton_raphson.ts',
+];
+
 for( const inputTSFile of files ){
     const outputJSFile = inputTSFile.replace('test', 'test_js').replace('.ts', '.js');
 

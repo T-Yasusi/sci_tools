@@ -6,11 +6,9 @@ import { valueType } from './types.js';
 export default function calc(equation: Term | Equation): valueType {
   let val = 0;
   if (equation instanceof Term) {
-    console.log('calc input Term');
     return calcTerm(equation);
   }
   if (equation instanceof Equation) {
-    console.log('calc input Equation');
     let val = 0;
     for (const term of equation.terms) val = add(val, calcTerm(term));
     return val;
