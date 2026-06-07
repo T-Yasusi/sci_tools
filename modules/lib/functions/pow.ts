@@ -18,19 +18,14 @@ export default function pow(x: Input, i: Input): number | Complex {
         }
     }
 
-    if (typeof x === 'number' && typeof i === 'number') {
-        return Math.pow(x, i);
-    }
-
+    if (typeof x === 'number' && typeof i === 'number') return Math.pow(x, i);
     if (x instanceof Complex && typeof i === 'number') {
         const r = Math.pow(x.abs()**2, i / 2);
         const theta = x.arg() * i;
         return new Complex(r * Math.cos(theta), r * Math.sin(theta));
     }
 
-    if (i instanceof Complex) {
-        return exp(i.mul(log(x as Complex)));
-    }
+    if (i instanceof Complex) return exp(i.mul(log(x as Complex)));
 
     throw new Error('!!! pow invalid type !!! ' + typeof x);
 }
