@@ -1,4 +1,5 @@
 import { add, sub, mul, div, neg } from '../operators.js'
+import { Complex } from '../classes.js'
 import { pow } from '../functions.js'
 import Expr from './Expr.js'
 import { Const, Term, Equation } from './classes.js'
@@ -21,7 +22,10 @@ export default function calc(equation: Term | Equation) : valueType {
 function calcTerm(term : Term): any{
     let val = 1;
     for( const item of term.items ){
-	if( item instanceof Const ) val *= pow(item.base as valueType, item.exponent);
+	if( item instanceof Const ){
+	    if( typeof item.base === 'number' || item.base instanceof Complex ) val *= pow(item.base as number | Complex, item.exponent);
+	    else throw new Error(`sysTS.calcTerm :: Const.value not supported type ${typeof item.value}`)
+	}
 	else throw new Error('sysTS.calcTerm Invaild Type');
     }
     if( term.sign ) return pow(val, term.exponent);
