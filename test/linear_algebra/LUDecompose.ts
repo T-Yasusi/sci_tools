@@ -1,6 +1,6 @@
-import { Complex, Vector, Matrix, ComplexVector, ComplexMatrix } from '../modules/dist/classes.js';
-import { add, sub, mul, div, neg } from '../modules/dist/operators.js';
-import { doolittleLU, croutLU } from '../modules/dist/linearAlgebra.js';
+import { Complex, Vector, Matrix, ComplexVector, ComplexMatrix } from '../../modules/dist/classes.js';
+import { add, sub, mul, div, neg } from '../../modules/dist/operators.js';
+import { doolittleLU, croutLU } from '../../modules/dist/linearAlgebra.js';
 
 const mat = new Matrix( [ 4, 3, 2,  1 ],
                         [ 3, 6, 5,  4 ],

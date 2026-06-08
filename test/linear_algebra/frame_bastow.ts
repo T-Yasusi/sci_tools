@@ -1,26 +1,25 @@
-import { Complex, Vector, Matrix, ComplexVector, ComplexMatrix } from '../modules/dist/classes.js';
-import { add, sub, mul, div, neg } from '../modules/dist/operators.js';
-import { bastow } from '../modules/dist/solver.js'
-import { frame, eigenVectorFromValue, gaussianElimination } from '../modules/dist/linearAlgebra.js';
+import { Complex, Vector, Matrix, ComplexVector, ComplexMatrix } from '../../modules/dist/classes.js';
+import { add, sub, mul, div, neg } from '../../modules/dist/operators.js';
+import { bastow } from '../../modules/dist/solver.js'
+import { frame, eigenVectorFromValue, gaussianElimination } from '../../modules/dist/linearAlgebra.js';
 
 function randomInt(min: number, max: number): number { return Math.floor(Math.random() * (max - min + 1)) + min; }
 const N=6;
 const min = -10, max = 10;
-const A = new ComplexMatrix(N, N);
+let A = new Matrix(N, N);
 for( let i=0; i<N; i++ ){
-        for( let j=0; j<N; j++ ) A[i][j]=new Complex(randomInt(min, max), randomInt(min, max)); // ランダム行列
-//      for( let j=i; j<N; j++ ){  // 対称行列
-//              a = new Complex(randomInt(min, max), randomInt(min, max));
-//              A[i][j]=a;
-//              A[j][i]=a.conj();
-//      }
+//	for( let j=i; j<N; j++ ) A[i][j]=randomInt(min, max); // 上三角行列
+	for( let j=0; j<N; j++ ) A[i][j]=randomInt(min, max); // ランダム行列
+//	for( let j=i; j<N; j++ ){  // 対称行列
+//		const a=randomInt(min, max); 
+//		A[i][j]=a;
+//		A[j][i]=a;
+//	}
 }
-
 console.log('A =\n', A.toPrecision(3));
 
 const coffs = frame(A);
 const eigens = bastow(coffs);
-
 let Q = new ComplexMatrix(N, N);
 for( let i=0; i<eigens.length; i++ ){
 	console.log(`Eign Value[${i}] = ${eigens[i].toPrecision(3)}`);
