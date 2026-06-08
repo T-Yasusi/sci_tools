@@ -1,9 +1,13 @@
-export default function(...args){
+export default function (...args){
     const logArea = document.getElementById('output');
     const div = document.createElement('div');
 
+    div.innerHTML += '$$';
     for( const a of args ){
-	div.innerHTML += typeof a === 'object' ? JSON.strigify(a) : String(a)+' ';
+	div.innerHTML += a;
     }
+    div.innerHTML += '$$';
+    
     logArea.appendChild(div);
+    MathJax.typeset( [div] );
 }
