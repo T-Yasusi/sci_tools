@@ -20,7 +20,7 @@ function calcTerm(term: Term): any {
   let val = 1;
   for (const item of term.items) {
     if (item instanceof Const) {
-      val = mul(val, pow(item.base as number | Complex, item.exponent));
+      if (typeof item.base === 'number' || item.base instanceof Complex) val = mul(val, pow(item.base as number | Complex, item.exponent));else throw new Error(`sysTS.calcTerm :: Const.base not supported type ${typeof item.base}`);
     } else throw new Error('sysTS.calcTerm Invaild Type');
   }
   if (term.sign) return pow(val, term.exponent);
