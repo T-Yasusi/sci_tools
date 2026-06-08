@@ -10,6 +10,13 @@ const files = [
     'test/integral.ts',
     'test/improper_integral.ts',
     'test/newton_raphson.ts',
+    'test/linear_algebra/LUDecompose.ts',
+    'test/linear_algebra/frame_bastow.ts',
+    'test/linear_algebra/frame_bastow_complex.ts',
+    'test/linear_algebra/hessenbergChange.ts',
+    'test/linear_algebra/hessenbergChange_complex.ts',
+    'test/linear_algebra/householderQR.ts',
+    'test/linear_algebra/householderQR_complex.ts',
 ];
 
 for( const inputTSFile of files ){
