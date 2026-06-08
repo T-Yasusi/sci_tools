@@ -90,7 +90,7 @@ export default class ComplexVector extends Array<Complex> implements IComplexVec
 
     conj(): ComplexVector { return new ComplexVector(...this.map(z => z.conj())); }
 
-    toPrecision(precision: number=3, isColumn=false){
+    toPrecision(precision: number=3, isColumn=true){
 	const strs = this.map(x=> x.toPrecision(precision));
 	const maxLength = strs.reduce((max, s)=> Math.max(max, s.length), 0);
 	const padded = strs.map(s => s.padStart(maxLength));
@@ -98,7 +98,7 @@ export default class ComplexVector extends Array<Complex> implements IComplexVec
 	else  return `[ ${padded.join(', ')} ]`;  
     }
 
-    toLatex(precision: number = 3, isColumn = false){
+    toLatex(precision: number = 3, isColumn = true){
 	const strs = this.map(x=> x.toPrecision(precision));
         if( isColumn ) return `\\begin{pmatrix} ${strs.join(' \\\\ ')} \\end{pmatrix}`;
         else           return `\\begin{pmatrix} ${strs.join(' , ')} \\end{pmatrix}`;	
