@@ -5,10 +5,11 @@ import setCodeTemplate from './setCodeTemplate.js'
 setCodeTemplate();
 
 import consoleOutput from './consoleLogHack.js'
+import consoleTex from './consoleTex.js'
 window.consoleOutput = consoleOutput; // Globalに定義することで動的ロードされたコードからも使用可能になる
+window.consoleTex = consoleTex;
 
 const editor = createMonacoEditor(document.getElementById('editor'));
-// editor.setValue('console.log("START"); \nconsole.log("Hello World!!"); \nconsole.log("FINISH");');
 
 document.getElementById("run").addEventListener('click', async (e)=>{
     document.getElementById("output").innerHTML = "";
@@ -22,7 +23,7 @@ document.getElementById("run").addEventListener('click', async (e)=>{
 	//	console.log(MathJax);
 //	const output=document.getElementById('output');
 //	console.log(output.innerHTML);
-	MathJax.typeset([ document.getElementById('output') ]);
+//	MathJax.typeset([ document.getElementById('output') ]);
     } catch(err) {
 	console.error('【Runtime Error 】');
         console.error(err);
