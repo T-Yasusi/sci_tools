@@ -1,4 +1,5 @@
 const list = [
+    { name: 'MathJaxテスト', value: "example/mathJax.ts" },
     { name: 'テスト', value: "test/test.ts" },
     { name: '演算子オーバーロード', value: "test/operator.ts" },
 ];

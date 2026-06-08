@@ -13,8 +13,8 @@ export default function(code, fileName = 'file.ts'){
 	}).code;	
 	return transpiledCode.replace(/\bconsole\.log\s*\(/g, 'consoleOutput(');
     } catch(err){
-	console.error('===== 【Transpile Error 】=====');
+	console.error('===== 【Transpile Error 】==========');
 	console.error(err);
-	console.error('===============================');
+	console.error('====================================');
     }
 }

@@ -24,7 +24,7 @@ function calcTerm(term : Term): any{
     for( const item of term.items ){
 	if( item instanceof Const ){
 	    if( typeof item.base === 'number' || item.base instanceof Complex ) val *= pow(item.base as number | Complex, item.exponent);
-	    else throw new Error(`sysTS.calcTerm :: Const.value not supported type ${typeof item.value}`)
+	    else throw new Error(`sysTS.calcTerm :: Const.base not supported type ${typeof item.base}`)
 	}
 	else throw new Error('sysTS.calcTerm Invaild Type');
     }
