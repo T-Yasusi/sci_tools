@@ -45,7 +45,6 @@ export default class Matrix extends Array<Vector> implements IMatrix {
 
     add(other: Matrix | ComplexMatrix ): Matrix | ComplexMatrix {
 	if (this.rows !== other.rows || this.cols !== other.cols) {
-
 	    throw new Error("Matrix dimensions must match for addition.");
 	}
 	const result = this.map((row, i) => row.add(other[i] as Vector));
