@@ -17,6 +17,12 @@ const files = [
     'test/linear_algebra/hessenbergChange_complex.ts',
     'test/linear_algebra/householderQR.ts',
     'test/linear_algebra/householderQR_complex.ts',
+    'test/specialFunc/associatedLaguerre.ts',
+    'test/specialFunc/associatedLegendre.ts',
+    'test/specialFunc/hermite.ts',
+    'test/specialFunc/laguerre.ts',
+    'test/specialFunc/legendre.ts',
+    'test/specailFunc/normalizedAssociatedLegendre.ts',
 ];
 
 for( const inputTSFile of files ){
