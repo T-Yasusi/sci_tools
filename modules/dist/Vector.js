@@ -1,4 +1,3 @@
-// import { IVector } from './interface/IVector.js'
 import { Complex } from './Complex.js';
 import ComplexVector from './ComplexVector.js';
 import Matrix from './Matrix.js';
@@ -119,7 +118,7 @@ export default class Vector extends Array {
             throw new Error('Invalid operand for mul: must be number or Vector');
         }
     }
-    toPrecision(precision, isColumn = false) {
+    toPrecision(precision, isColumn = true) {
         const strs = this.map(x => toFormattedPrecision(x, precision));
         const maxLength = strs.reduce((max, s) => Math.max(max, s.length), 0);
         const padded = strs.map(s => s.padStart(maxLength));
@@ -127,5 +126,12 @@ export default class Vector extends Array {
             return `| ${padded.join(' |\n| ')} |`;
         else
             return `[ ${padded.join(', ')} ]`;
+    }
+    toLatex(precision = 3, isColumn = true) {
+        const strs = this.map(x => toFormattedPrecision(x, precision));
+        if (isColumn)
+            return `\\begin{pmatrix} ${strs.join(' \\\\ ')} \\end{pmatrix}`;
+        else
+            return `\\begin{pmatrix} ${strs.join(' , ')} \\end{pmatrix}`;
     }
 }

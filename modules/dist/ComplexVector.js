@@ -89,7 +89,7 @@ export default class ComplexVector extends Array {
         return this.every((z, i) => z.equals(other[i]));
     }
     conj() { return new ComplexVector(...this.map(z => z.conj())); }
-    toPrecision(precision = 3, isColumn = false) {
+    toPrecision(precision = 3, isColumn = true) {
         const strs = this.map(x => x.toPrecision(precision));
         const maxLength = strs.reduce((max, s) => Math.max(max, s.length), 0);
         const padded = strs.map(s => s.padStart(maxLength));
@@ -97,5 +97,12 @@ export default class ComplexVector extends Array {
             return `| ${padded.join(' |\n| ')} |`;
         else
             return `[ ${padded.join(', ')} ]`;
+    }
+    toLatex(precision = 3, isColumn = true) {
+        const strs = this.map(x => x.toPrecision(precision));
+        if (isColumn)
+            return `\\begin{pmatrix} ${strs.join(' \\\\ ')} \\end{pmatrix}`;
+        else
+            return `\\begin{pmatrix} ${strs.join(' , ')} \\end{pmatrix}`;
     }
 }

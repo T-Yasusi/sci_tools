@@ -118,4 +118,8 @@ export default class ComplexMatrix extends Array {
         const padded = formatted.map(row => row.map(s => s.padStart(maxLength)));
         return padded.map(row => (`| ${row.join(', ')} |`)).join('\n');
     }
+    toLatex(precision) {
+        const formatted = this.map(row => row.map(x => x.toPrecision(precision)));
+        return '\\begin{pmatrix} ' + formatted.map(row => (`${row.join(' & ')}`)).join(' \\\\') + '\\end{pmatrix}';
+    }
 }
