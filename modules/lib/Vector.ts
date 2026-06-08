@@ -109,7 +109,7 @@ export default class Vector extends Array<number> implements IVector {
 	}
     }
 
-    toPrecision(precision: number, isColumn: boolean = false){
+    toPrecision(precision: number, isColumn: boolean = true){
 	const strs = this.map(x=> toFormattedPrecision(x, precision));
 	const maxLength = strs.reduce((max, s)=> Math.max(max, s.length), 0);
 	const padded = strs.map(s => s.padStart(maxLength));
@@ -117,7 +117,7 @@ export default class Vector extends Array<number> implements IVector {
 	else  return `[ ${padded.join(', ')} ]`;
     }
 
-    toLatex(precision: number = 3, isColumn: boolean = false){
+    toLatex(precision: number = 3, isColumn: boolean = true){
 	const strs = this.map(x=> toFormattedPrecision(x, precision));
 	if( isColumn ) return `\\begin{pmatrix} ${strs.join(' \\\\ ')} \\end{pmatrix}`;
 	else           return `\\begin{pmatrix} ${strs.join(' , ')} \\end{pmatrix}`;
