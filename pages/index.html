@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <title>Science Calculation Tools</title>
     <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./modal.css">
   </head>
   <body>
     <h1>TypeScriptによる科学計算ツール</h1>
@@ -16,6 +17,10 @@
     <h2>出力</h2>
     <div id="output"></div>
 
+    <div id="display-wrapper" class="modal-wrapper">
+      <div id="display" class="modal"></div>
+    </div>
+    
     <script type="module" src="/src/main.js"></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
   </body>

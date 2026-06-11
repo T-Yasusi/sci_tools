@@ -1,8 +1,9 @@
-const list = [
+const list = 
     { name: '逆行列計算(ガウスの消去法)', value: 'example/gaussianElimination.ts' },
     { name: 'MathJaxテスト', value: "example/mathJax.ts" },
-    { name: 'テスト', value: "test/test.ts" },
-    { name: '演算子オーバーロード', value: "test/operator.ts" },
+    { name: 'ルジャンドル関数(グラフ描画)', value: "graphics/specialFunc/legendre.ts" },
+    { name: 'ラゲール関数(グラフ描画)',     value: "graphics/specialFunc/laguerre.ts" },
+    { name: 'エルミート関数(グラフ描画)',     value: "graphics/specialFunc/hermite.ts" },
 ];
 
 export default ()=>{
