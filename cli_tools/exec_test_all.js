@@ -4,26 +4,8 @@ import path from 'path';
 import { execSync } from 'child_process'
 import glob from 'fast-glob';
 
+import files from  './test_files.js'
 // const files = await glob(`test/**/*.ts`);
-const files = [
-    'test/diff.ts',
-    'test/integral.ts',
-    'test/improper_integral.ts',
-    'test/newton_raphson.ts',
-    'test/linear_algebra/LUDecompose.ts',
-    'test/linear_algebra/frame_bastow.ts',
-    'test/linear_algebra/frame_bastow_complex.ts',
-    'test/linear_algebra/hessenbergChange.ts',
-    'test/linear_algebra/hessenbergChange_complex.ts',
-    'test/linear_algebra/householderQR.ts',
-    'test/linear_algebra/householderQR_complex.ts',
-    'test/specialFunc/associatedLaguerre.ts',
-    'test/specialFunc/associatedLegendre.ts',
-    'test/specialFunc/hermite.ts',
-    'test/specialFunc/laguerre.ts',
-    'test/specialFunc/legendre.ts',
-    'test/specailFunc/normalizedAssociatedLegendre.ts',
-];
 
 for( const inputTSFile of files ){
     const outputJSFile = inputTSFile.replace('test', 'test_js').replace('.ts', '.js');
