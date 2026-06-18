@@ -3,7 +3,7 @@ export default function(...args){
     const div = document.createElement('div');
 
     for( const a of args ){
-	div.innerHTML += typeof a === 'object' ? JSON.strigify(a) : String(a)+' ';
+	div.innerHTML += typeof a === 'object' ? JSON.stringify(a) : String(a)+' ';
     }
     logArea.appendChild(div);
 }
