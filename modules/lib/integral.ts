@@ -8,5 +8,11 @@ import minusInfToInf from './integral/DE/minusInfToInf.js'
 import zeroToInf from './integral/DE/zeroToInf.js'
 import minusOneToOne from './integral/DE/minusOneToOne.js'
 
-const integral: Integral = { trapezoid, simpson, gaussKronrod, minusInfToInf, zeroToInf, minusOneToOne };
-export default integral;
+export default {
+    trapezoid: trapezoid,
+    simpson: simpson,
+    gaussKronrod: gaussKronrod,
+    minusInfToInf: minusInfToInf,
+    zeroToInf: zeroToInf,
+    minusOneToOne: minusOneToOne,
+}

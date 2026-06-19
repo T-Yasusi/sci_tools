@@ -8,7 +8,7 @@ export default function convergeComplex(
     threshold: number
 ): Complex {
     let max_range = 20;
-    while( isFinite(abs(g(-max_range))) || isFinite(abs(g(new Complex(max_range, 0)))) ){
+    while( !Number.isFinite(abs(g(-max_range))) || !Number.isFinite(abs(g(new Complex(max_range, 0)))) ){
         max_range = 0.5*max_range;
         if( max_range<1.0e-3 ) throw new Error('!!! integral.minusInfToInf not converged function !!!');
     }
@@ -25,7 +25,8 @@ export default function convergeComplex(
 	    throw new Error('!!! integral.minusInfToInf not converged !!!');
         val0 = val1;
         val1 = trapezoid(g, -range, range);
- //       console.log(range, val0, val1);
+//	console.log(range, val0, val1);
     }
+//    console.log('val = ', val1);
     return val1 as Complex;
 }
