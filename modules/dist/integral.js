@@ -4,5 +4,11 @@ import gaussKronrod from './integral/gaussKronrod.js';
 import minusInfToInf from './integral/DE/minusInfToInf.js';
 import zeroToInf from './integral/DE/zeroToInf.js';
 import minusOneToOne from './integral/DE/minusOneToOne.js';
-const integral = { trapezoid, simpson, gaussKronrod, minusInfToInf, zeroToInf, minusOneToOne };
-export default integral;
+export default {
+    trapezoid: trapezoid,
+    simpson: simpson,
+    gaussKronrod: gaussKronrod,
+    minusInfToInf: minusInfToInf,
+    zeroToInf: zeroToInf,
+    minusOneToOne: minusOneToOne,
+};
