@@ -62,6 +62,8 @@ add(加算), sub(減算), mul(乗算), div(除算), neg(負), mod(剰余) があ
 - accosicatedLegendre: ルジャンドル陪関数
 - normalizedAccosicatedLegendre: 規格化されたルジャンドル陪関数
 - accocisatedLaguerre: ラゲール陪関数
+- beta: Β関数
+- gamma: Γ関数
 
 ## solver (数値的解法ライブラリ)
 - bastow: n次多項式をベアストウ法で解く

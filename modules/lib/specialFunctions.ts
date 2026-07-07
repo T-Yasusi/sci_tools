@@ -6,4 +6,6 @@ export { default as associatedLegendre } from './specialFunctions/associatedLege
 export { default as associatedLaguerre } from './specialFunctions/associatedLaguerre.js';
 export { default as normalizedAssociatedLegendre } from './specialFunctions/normalizedAssociatedLegendre.js';
 
+export { default as gamma } from './specialFunctions/gamma.js';
+export { default as beta } from './specialFunctions/beta.js';
 		    
