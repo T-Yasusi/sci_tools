@@ -6,6 +6,7 @@ const list = [
     { name: 'ラゲール関数(グラフ描画)',     value: "graphics/specialFunc/laguerre.ts" },
     { name: 'エルミート関数(グラフ描画)',   value: "graphics/specialFunc/hermite.ts" },
     { name: 'ローレンツアトラクタ',     value: "graphics/lorenz.ts" },
+    { name: 'ヒストグラム(正規分布)',     value: "graphics/hist/gauss.ts" },
 ];
 
 export default ()=>{
