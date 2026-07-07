@@ -7,7 +7,7 @@ export default function converge(g: ((x: number) => number), threshold: number):
     max_range = mul(0.5, max_range);
     if (max_range < 1.0e-3) throw new Error('!!! integral.zeroToInf not converged function !!!');
   }
-  //   console.log('max_range :', max_range);
+  //    console.log('max_range :', max_range);
 
   let range = mul(0.1, max_range);
   const step = range;
@@ -19,7 +19,7 @@ export default function converge(g: ((x: number) => number), threshold: number):
     if (!Number.isFinite(g(neg(range))) || !Number.isFinite(g(range))) throw new Error('!!! integral.zeroToInf not converged !!!');
     val0 = val1;
     val1 = trapezoid(g, neg(range), range);
-    //        console.log(range, val0, val1);
+    //	console.log(range, val0, val1);
   }
   return val1 as number;
 }

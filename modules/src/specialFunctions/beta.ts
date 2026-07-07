@@ -10,5 +10,5 @@ export default function beta(x: InputType, y: InputType): number | Complex {
     const y_re = y instanceof Complex ? y.re : y;
     if( x_re <= 0 || y_re <= 0 ) throw new Error(`specialFunctions.beta(x, y) should be Re(x) > 0 && Re(y) > 0`)
     
-    return integral.simpson( (t: number) => pow(t, x-1) * pow(1-t, y-1), 0, 1 );
+    return 0.5*integral.minusOneToOne( (t: number) => pow(0.5*t+0.5, x-1) * pow(0.5-0.5*t, y-1) );
 }
