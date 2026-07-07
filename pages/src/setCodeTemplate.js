@@ -1,4 +1,5 @@
 const list = [
+    { name: 'Γ関数(グラフ描画)',   value: "graphics/specialFunc/gamma.ts" },
     { name: '逆行列計算(ガウスの消去法)', value: 'example/gaussianElimination.ts' },
     { name: 'MathJaxテスト', value: "example/mathJax.ts" },
     { name: 'ルジャンドル関数(グラフ描画)', value: "graphics/specialFunc/legendre.ts" },
